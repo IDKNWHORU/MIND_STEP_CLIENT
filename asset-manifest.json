@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/MIND_STEP_CLIENT/static/css/main.73bd5739.css",
-    "main.js": "/MIND_STEP_CLIENT/static/js/main.2b6bd53a.js",
+    "main.css": "/MIND_STEP_CLIENT/static/css/main.61331500.css",
+    "main.js": "/MIND_STEP_CLIENT/static/js/main.d368927c.js",
     "static/js/787.a809d9a3.chunk.js": "/MIND_STEP_CLIENT/static/js/787.a809d9a3.chunk.js",
     "index.html": "/MIND_STEP_CLIENT/index.html",
-    "main.73bd5739.css.map": "/MIND_STEP_CLIENT/static/css/main.73bd5739.css.map",
-    "main.2b6bd53a.js.map": "/MIND_STEP_CLIENT/static/js/main.2b6bd53a.js.map",
+    "main.61331500.css.map": "/MIND_STEP_CLIENT/static/css/main.61331500.css.map",
+    "main.d368927c.js.map": "/MIND_STEP_CLIENT/static/js/main.d368927c.js.map",
     "787.a809d9a3.chunk.js.map": "/MIND_STEP_CLIENT/static/js/787.a809d9a3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.73bd5739.css",
-    "static/js/main.2b6bd53a.js"
+    "static/css/main.61331500.css",
+    "static/js/main.d368927c.js"
   ]
 }
