@@ -10,7 +10,7 @@ const { Header, Content, Footer } = Layout;
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Layout>
         <Header className="nav-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <h1>MIND STEP</h1>
