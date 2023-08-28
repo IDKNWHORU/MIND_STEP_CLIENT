@@ -3,8 +3,8 @@ import { useState } from "react";
 import "./Counseling.css";
 
 const chatData = [
-    { id: 1, sender: 'User', message: 'Hello there!' },
-    { id: 2, sender: 'Bot', message: 'Hi, how can I help you?' },
+    { id: 1, sender: '사용자', message: '상담 내용1' },
+    { id: 2, sender: 'Bot', message: '응답 내용1' },
 ];
 
 export const Counseling = _ => {
