@@ -1,44 +1,32 @@
+import "./Counseling.css"
+import { List, Avatar, Typography } from 'antd';
+
+const { Text } = Typography;
+
+const chatData = [
+    { id: 1, sender: 'User', message: 'Hello there!' },
+    { id: 2, sender: 'Bot', message: 'Hi, how can I help you?' },
+];
+
 export const Counseling = _ => (
     <>
-        <article>
-            <header>상담이력</header>
-            <details open={true}>
-                <ul>
-                    <li>
-                        <article>
-                            <header>사용자</header>
-                            <p>상담메시지1</p>
-                        </article>
-                    </li>
-                    <li>
-                        <article>
-                            <header>응답</header>
-                            <p>응답메시지1</p>
-                        </article>
-                    </li>
-                    <li><article>
-                        <header>사용자</header>
-                        <p>상담메시지2</p>
-                    </article></li>
-                    <li><article>
-                        <header>응답</header>
-                        <p>응답메시지2</p>
-                    </article></li>
-                    <li><article>
-                        <header>사용자</header>
-                        <p>상담메시지3</p>
-                    </article></li>
-                    <li><article>
-                        <header>응답</header>
-                        <p>응답메시지3</p>
-                    </article></li>
-                </ul>
-            </details>
-        </article>
-        <article>
-            <header>상담입력</header>
-            <textarea></textarea>
-            <button>‣</button>
-        </article>
+        <h2>상담 이력</h2>
+        <List
+            itemLayout="horizontal"
+            dataSource={chatData}
+            renderItem={(item) => (
+                <List.Item className={`chat-bubble ${item.sender.toLowerCase()}`}>
+                    <List.Item.Meta
+                        avatar={<Avatar>{item.sender[0]}</Avatar>}
+                        title={item.sender}
+                        description={item.message}
+                    />
+                </List.Item>
+            )}
+        />
+        <div className="chat-input">
+            <input type="text" placeholder="메시지 입력" />
+            <button>전송</button>
+        </div>
     </>
 )

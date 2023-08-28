@@ -6,11 +6,11 @@ import { Upload } from './pages/Upload';
 function App() {
   return (
     <>
-      <header>MIND STEP</header>
-      <hr />
-      {/* <Counseling /> */}
+      <h1>MIND STEP</h1>
+      <div className="chat-container"></div>
+      <Counseling />
       {/* <MyHistory></MyHistory> */}
-      <Upload />
+      {/* <Upload /> */}
     </>
   );
 }
