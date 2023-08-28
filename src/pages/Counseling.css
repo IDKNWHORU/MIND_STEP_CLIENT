@@ -1,11 +1,10 @@
 .chat-input {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  position: fixed;
+  position: absolute; /* 절대 위치로 설정 */
   bottom: 60px;
-  margin-top: 20px;
   width: 100%;
+  padding: 0 10px; /* 좌우 패딩을 조정하여 여백을 만들어줍니다 */
 }
 
 .send-button {

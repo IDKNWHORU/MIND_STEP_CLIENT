@@ -7,8 +7,9 @@ function App() {
   return (
     <>
       <h1>MIND STEP</h1>
-      <div className="chat-container"></div>
-      <Counseling />
+      <div className="chat-container">
+        <Counseling />
+      </div>
       {/* <MyHistory></MyHistory> */}
       {/* <Upload /> */}
     </>
