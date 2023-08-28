@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/MIND_STEP_CLIENT/static/css/main.e758ef3d.css",
-    "main.js": "/MIND_STEP_CLIENT/static/js/main.7c6cb100.js",
+    "main.js": "/MIND_STEP_CLIENT/static/js/main.830d4f0a.js",
     "static/js/787.a809d9a3.chunk.js": "/MIND_STEP_CLIENT/static/js/787.a809d9a3.chunk.js",
     "index.html": "/MIND_STEP_CLIENT/index.html",
     "main.e758ef3d.css.map": "/MIND_STEP_CLIENT/static/css/main.e758ef3d.css.map",
-    "main.7c6cb100.js.map": "/MIND_STEP_CLIENT/static/js/main.7c6cb100.js.map",
+    "main.830d4f0a.js.map": "/MIND_STEP_CLIENT/static/js/main.830d4f0a.js.map",
     "787.a809d9a3.chunk.js.map": "/MIND_STEP_CLIENT/static/js/787.a809d9a3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e758ef3d.css",
-    "static/js/main.7c6cb100.js"
+    "static/js/main.830d4f0a.js"
   ]
 }
