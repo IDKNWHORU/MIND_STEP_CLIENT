@@ -1,5 +1,6 @@
+import { useState } from "react";
 import "./Counseling.css"
-import { List, Avatar, Typography } from 'antd';
+import { List, Avatar, Typography, Input, Button } from 'antd';
 
 const { Text } = Typography;
 
@@ -8,8 +9,11 @@ const chatData = [
     { id: 2, sender: 'Bot', message: 'Hi, how can I help you?' },
 ];
 
-export const Counseling = _ => (
-    <>
+export const Counseling = _ => {
+    const [message, setMessage] = useState("");
+    const [messages, setMessages] = useState([]);
+
+    return <>
         <h2>상담 이력</h2>
         <List
             itemLayout="horizontal"
@@ -25,8 +29,15 @@ export const Counseling = _ => (
             )}
         />
         <div className="chat-input">
-            <input type="text" placeholder="메시지 입력" />
-            <button>전송</button>
+            <Input.TextArea
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                placeholder="Type your message..."
+                autoSize={{ minRows: 1, maxRows: 6 }}
+            />
+            <button className="send-button" onClick={() => console.log("Sending...")}>
+                Send
+            </button>
         </div>
     </>
-)
+}
