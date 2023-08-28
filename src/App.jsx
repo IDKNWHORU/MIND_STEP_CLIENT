@@ -27,15 +27,17 @@ function App() {
           </Menu>
         </Header>
         <Content style={{ padding: '0 50px' }}>
-          <Routes>
-            <Route path="/" element={<div className="chat-container">
-              <Counseling />
-            </div>} />
-            <Route path="/history" element={<MyHistory />} />
-            <Route path="/upload" element={<Upload />} />
-          </Routes>
+          <div className="chat-container">
+            <Routes>
+              <Route path="/" element={
+                <Counseling />
+              } />
+              <Route path="/history" element={<MyHistory />} />
+              <Route path="/upload" element={<Upload />} />
+            </Routes>
+          </div>
         </Content>
-        <Footer style={{ textAlign: 'center' }}>Footer</Footer>
+        <Footer style={{ textAlign: 'center' }}><h1>MIND STEP</h1></Footer>
       </Layout>
     </Router>
   );

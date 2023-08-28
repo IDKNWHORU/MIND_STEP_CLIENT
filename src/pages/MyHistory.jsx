@@ -1,20 +1,37 @@
+import { ClockCircleOutlined } from '@ant-design/icons';
+import { Timeline } from 'antd';
+
+
 export const MyHistory = _ => (
     <>
-        <article>
-            <header>분석결과창</header>
-            <p>사용자님의 분석결과는 다음과 같습니다</p>
-            <article>
-                <header>2023년 8월 28일 15시 20분</header>
-                <p>분석 결과 내용</p>
-            </article>
-            <article>
-                <header>2023년 8월 29일 15시 20분</header>
-                <p>분석 결과 내용</p>
-            </article>
-            <article>
-                <header>2023년 8월 30일 15시 20분</header>
-                <p>분석 결과 내용</p>
-            </article>
-        </article>
+        <h2>분석결과창</h2>
+        <h3>사용자님의 분석결과는 다음과 같습니다</h3>
+        <Timeline
+            mode="alternate"
+            items={[
+                {
+                    children: '분석결과 내용1 2023-08-28 15:20',
+                },
+                {
+                    children: '분석결과 내용2 2023-08-29 15:20',
+                    color: 'green',
+                },
+                {
+                    dot: <ClockCircleOutlined style={{ fontSize: '16px' }} />,
+                    children: `분석결과 내용3 2023-08-30 15:20`,
+                },
+                {
+                    color: 'red',
+                    children: '분석결과 내용4 2023-09-01 15:20',
+                },
+                {
+                    children: '분석결과 내용5 2023-09-02 15:20',
+                },
+                {
+                    dot: <ClockCircleOutlined style={{ fontSize: '16px' }} />,
+                    children: '분석결과 내용6 2023-09-03 15:20',
+                },
+            ]}
+        />
     </>
 )
