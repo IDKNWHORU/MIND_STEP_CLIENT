@@ -7,7 +7,7 @@ export const MyHistory = _ => (
         <h2>분석결과창</h2>
         <h3>사용자님의 분석결과는 다음과 같습니다</h3>
         <Timeline
-            mode="alternate"
+            mode="left"
             items={[
                 {
                     label: '2023-08-28 15:20',
