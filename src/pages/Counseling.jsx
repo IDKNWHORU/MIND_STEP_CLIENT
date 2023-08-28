@@ -1,8 +1,6 @@
+import { Avatar, Input, List } from 'antd';
 import { useState } from "react";
-import "./Counseling.css"
-import { List, Avatar, Typography, Input, Button } from 'antd';
-
-const { Text } = Typography;
+import "./Counseling.css";
 
 const chatData = [
     { id: 1, sender: 'User', message: 'Hello there!' },
@@ -11,7 +9,6 @@ const chatData = [
 
 export const Counseling = _ => {
     const [message, setMessage] = useState("");
-    const [messages, setMessages] = useState([]);
 
     return <>
         <h2>상담 이력</h2>
