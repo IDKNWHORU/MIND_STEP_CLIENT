@@ -7,25 +7,16 @@ import { UserOutlined, CheckCircleOutlined, UploadOutlined } from '@ant-design/i
 import { HashRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-const { Header, Content, Footer } = Layout;
+const { Header, Content } = Layout;
 
 function App() {
-  const [selectedMenuKey, setSelectedMenuKey] = useState(localStorage.getItem('selectedMenuKey') ?? 'home');
-
-  useEffect(() => {
-    // 페이지 로딩 시 localStorage에서 selectedMenuKey 값을 가져옴
-    const storedKey = localStorage.getItem('selectedMenuKey');
-    if (storedKey) {
-      setSelectedMenuKey(storedKey);
-    }
-  }, []);
+  const currentHash = window.location.hash.slice(1);
+  const [selectedMenuKey, setSelectedMenuKey] = useState(currentHash || 'home');
 
   const handleMenuSelect = (e) => {
     const selectedKey = e.key;
     setSelectedMenuKey(selectedKey);
 
-    // 선택된 메뉴를 localStorage에 저장
-    localStorage.setItem('selectedMenuKey', selectedKey);
   };
 
   return (
@@ -34,13 +25,13 @@ function App() {
         <Header className="nav-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <h1>MIND STEP</h1>
           <Menu theme="light" mode="horizontal" selectedKeys={[selectedMenuKey]} onSelect={handleMenuSelect}>
-            <Menu.Item key="home" icon={<UserOutlined />}>
+            <Menu.Item key="/" icon={<UserOutlined />}>
               <Link to="/">상담 하기</Link>
             </Menu.Item>
-            <Menu.Item key="history" icon={<CheckCircleOutlined />}>
+            <Menu.Item key="/history" icon={<CheckCircleOutlined />}>
               <Link to="/history">분석 결과</Link>
             </Menu.Item>
-            <Menu.Item key="upload" icon={<UploadOutlined />}>
+            <Menu.Item key="/upload" icon={<UploadOutlined />}>
               <Link to="/upload">상담 데이터 업로드</Link>
             </Menu.Item>
           </Menu>
@@ -56,7 +47,6 @@ function App() {
             </Routes>
           </div>
         </Content>
-        <Footer style={{ textAlign: 'center' }}><h1>MIND STEP</h1></Footer>
       </Layout>
     </Router>
   );
