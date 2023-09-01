@@ -1,16 +1,17 @@
+import { CheckCircleOutlined, UploadOutlined, UserOutlined } from '@ant-design/icons';
+import { Layout, Menu } from 'antd';
+import { useState } from 'react';
+import { Link, Route, HashRouter as Router, Routes } from 'react-router-dom';
 import './App.css';
 import { Counseling } from './pages/Counseling';
 import { MyHistory } from './pages/MyHistory';
 import { Upload } from './pages/Upload';
-import { Layout, Menu } from 'antd';
-import { UserOutlined, CheckCircleOutlined, UploadOutlined } from '@ant-design/icons';
-import { HashRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
 
 const { Header, Content } = Layout;
 
 function App() {
-  const currentHash = window.location.hash.slice(1);
+  const currentHash = window.location.hash === ''? '/': window.location.hash.slice(1);
+
   const [selectedMenuKey, setSelectedMenuKey] = useState(currentHash || 'home');
 
   const handleMenuSelect = (e) => {
