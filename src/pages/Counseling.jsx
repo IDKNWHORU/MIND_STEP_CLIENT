@@ -16,7 +16,7 @@ export const Counseling = _ => {
 
     useEffect(_ => {
         const initializeWebSocket = () => {
-            const newSocket = new WebSocket("ws://localhost:8000/ws");
+            const newSocket = new WebSocket("ws://ec2-3-34-181-29.ap-northeast-2.compute.amazonaws.com:8000/ws");
             newSocket.onopen = (event) => {
                 console.log('WebSocket connection opened');
             };
@@ -59,7 +59,6 @@ export const Counseling = _ => {
     };
 
     return <>
-        <h2>상담 이력</h2>
         <div className="chat-list" ref={listRef}>
             <List
                 itemLayout="horizontal"
@@ -76,7 +75,6 @@ export const Counseling = _ => {
                 locale={{ emptyText: '채팅을 시작해주세요' }}
             />
         </div>
-        <hr />
         <div className="chat-input">
             <Input.TextArea
                 value={message}

@@ -1,16 +1,21 @@
-import { CheckCircleOutlined, UploadOutlined, UserOutlined } from '@ant-design/icons';
+import { CheckCircleOutlined, UploadOutlined, UserOutlined, MailOutlined, EditOutlined, CheckSquareOutlined } from '@ant-design/icons';
 import { Layout, Menu } from 'antd';
 import { useState } from 'react';
 import { Link, Route, HashRouter as Router, Routes } from 'react-router-dom';
 import './App.css';
 import { Counseling } from './pages/Counseling';
 import { MyHistory } from './pages/MyHistory';
-import { Upload } from './pages/Upload';
+import { Analysis } from './pages/Analysis';
+import { Tile } from './pages/Tile';
+import { ShortForm } from './pages/ShortForm';
+import { PersonaTalk } from './pages/PersonaTalk';
+import { ProfessionalPsychologicalTest } from './pages/PPT';
+import { InMindSearch } from './pages/Inmind';
 
 const { Header, Content } = Layout;
 
 function App() {
-  const currentHash = window.location.hash === ''? '/': window.location.hash.slice(1);
+  const currentHash = window.location.hash === '' ? '/' : window.location.hash.slice(1);
 
   const [selectedMenuKey, setSelectedMenuKey] = useState(currentHash || 'home');
 
@@ -24,27 +29,37 @@ function App() {
     <Router basename={process.env.PUBLIC_URL}>
       <Layout>
         <Header className="nav-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <h1>MIND STEP</h1>
-          <Menu theme="light" mode="horizontal" selectedKeys={[selectedMenuKey]} onSelect={handleMenuSelect}>
-            <Menu.Item key="/" icon={<UserOutlined />}>
-              <Link to="/">상담 하기</Link>
+          <h1 className="app-logo">MIND STEP</h1>
+          <Menu theme="light" mode="horizontal" selectedKeys={[selectedMenuKey]} onSelect={handleMenuSelect} disabledOverflow={true}>
+            <Menu.Item key="/" icon={<CheckSquareOutlined />}>
+              <Link to="/">All Menu</Link>
             </Menu.Item>
-            <Menu.Item key="/history" icon={<CheckCircleOutlined />}>
-              <Link to="/history">분석 결과</Link>
+            <Menu.Item key="/short-form" icon={<EditOutlined />}>
+              <Link to="/short-form">숏폼 작성하기</Link>
             </Menu.Item>
-            <Menu.Item key="/upload" icon={<UploadOutlined />}>
-              <Link to="/upload">상담 데이터 업로드</Link>
+            <Menu.Item key="/persona-talk" icon={<UserOutlined />}>
+              <Link to="/persona-talk">페르소나 톡</Link>
+            </Menu.Item>
+            <Menu.Item key="/counseling" icon={<UserOutlined />}>
+              <Link to="/counseling">전문 심리 검사</Link>
+            </Menu.Item>
+            <Menu.Item key="/in-mind-search" icon={<CheckCircleOutlined />}>
+              <Link to="/in-mind-search">인마인드 분석</Link>
+            </Menu.Item>
+            <Menu.Item key="/analysis" icon={<MailOutlined />}>
+              <Link to="/analysis">채팅 분석</Link>
             </Menu.Item>
           </Menu>
         </Header>
         <Content style={{ padding: '0 50px' }}>
           <div className="chat-container">
             <Routes>
-              <Route path="/" element={
-                <Counseling />
-              } />
-              <Route path="/history" element={<MyHistory />} />
-              <Route path="/upload" element={<Upload />} />
+              <Route path="/" element={<Tile />} />
+              <Route path="/counseling" element={<ProfessionalPsychologicalTest />} />
+              <Route path="/in-mind-search" element={<InMindSearch />} />
+              <Route path="/analysis" element={<Analysis />} />
+              <Route path="/short-form" element={<ShortForm />} />
+              <Route path="/persona-talk" element={<PersonaTalk />} />
             </Routes>
           </div>
         </Content>

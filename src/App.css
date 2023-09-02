@@ -16,6 +16,10 @@
   }
 }
 
+.app-logo {
+  white-space: nowrap;
+}
+
 .chat-container {
   width: 80%;
   margin: auto;
