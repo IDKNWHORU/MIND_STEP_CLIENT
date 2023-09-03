@@ -25,7 +25,11 @@
 }
 
 /* Chat Container 스타일 */
-.chat-container {
+.chat-container2 {
+  width: 80%;
+  margin: auto;
+  position: relative;
+  height: calc(100vh - 160px);
   background-color: #fff;
   padding: 16px;
   border-radius: 4px;

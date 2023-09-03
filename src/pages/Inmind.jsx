@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { Layout, Input, Button, List, Typography } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 import './InMindSearch.css';
+import { Avatar, Card } from 'antd';
 
-const { Header, Content } = Layout;
+const { Content } = Layout;
 const { Title, Paragraph } = Typography;
+const { Meta } = Card;
 
 export const InMindSearch = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -26,8 +28,71 @@ export const InMindSearch = () => {
 
     return (
         <>
-            <h2>인마인드 탐색</h2>
+            <h2>오늘의 마인드풀 컨텐츠 추천</h2>
             <Content className="content">
+                <h3>추천 리스트</h3>
+                <div className="results-container">
+                    <Card
+                        hoverable
+                        style={{ width: 400, position: 'relative', marginBottom: 20, border: 'none', background: 'transparent', boxShadow: 'none' }}
+                        cover={<img alt="예시 이미지" className="card-image3" src="/inmind/1.png" />}
+                    >
+                        <Meta
+                            title="Card title"
+                            description="This is the description"
+                        />
+                    </Card>
+                    <Card
+                        hoverable
+                        style={{ width: 400, position: 'relative', marginBottom: 20, border: 'none', background: 'transparent', boxShadow: 'none' }}
+                        cover={<img alt="예시 이미지" className="card-image3" src="/inmind/2.png" />}
+                    >
+                        <Meta
+                            title="Card title"
+                            description="This is the description"
+                        />
+                    </Card>
+                    <Card
+                        hoverable
+                        style={{ width: 400, position: 'relative', marginBottom: 20, border: 'none', background: 'transparent', boxShadow: 'none' }}
+                        cover={<img alt="예시 이미지" className="card-image3" src="/inmind/3.png" />}
+                    >
+                        <Meta
+                            title="Card title"
+                            description="This is the description"
+                        />
+                    </Card>
+                    <Card
+                        hoverable
+                        style={{ width: 400, position: 'relative', marginBottom: 20, border: 'none', background: 'transparent', boxShadow: 'none' }}
+                        cover={<img alt="예시 이미지" className="card-image3" src="/inmind/4.png" />}
+                    >
+                        <Meta
+                            title="Card title"
+                            description="This is the description"
+                        />
+                    </Card>
+                    <Card
+                        hoverable
+                        style={{ width: 400, position: 'relative', marginBottom: 20, border: 'none', background: 'transparent', boxShadow: 'none' }}
+                        cover={<img alt="예시 이미지" className="card-image3" src="/inmind/5.png" />}
+                    >
+                        <Meta
+                            title="Card title"
+                            description="This is the description"
+                        />
+                    </Card>
+                    <Card
+                        hoverable
+                        style={{ width: 400, position: 'relative', marginBottom: 20, border: 'none', background: 'transparent', boxShadow: 'none' }}
+                        cover={<img alt="예시 이미지" className="card-image3" src="/inmind/6.png" />}
+                    >
+                        <Meta
+                            title="Card title"
+                            description="This is the description"
+                        />
+                    </Card>
+                </div>
                 <div className="search-container">
                     <Input
                         placeholder="검색어를 입력하세요"
@@ -41,22 +106,6 @@ export const InMindSearch = () => {
                     >
                         검색
                     </Button>
-                </div>
-                <div className="results-container">
-                    <Title level={3}>검색 결과</Title>
-                    <List
-                        dataSource={searchResults}
-                        renderItem={(item) => (
-                            <List.Item>
-                                <Paragraph>
-                                    {item}
-                                </Paragraph>
-                                <Paragraph>
-                                    {`"${item}"에 대한 내면의 평화를 찾는 방법과 관련된 정보입니다. 감정을 관리하고 심리적 안정성을 향상시키는 데 도움이 될 수 있는 자료와 가이드를 찾아보세요.`}
-                                </Paragraph>
-                            </List.Item>
-                        )}
-                    />
                 </div>
             </Content>
         </>

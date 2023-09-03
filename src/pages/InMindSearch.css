@@ -21,7 +21,7 @@
 
 /* Content 컨테이너 스타일 */
 .content {
-    padding: 24px;
+    padding: 0;
 }
 
 /* 검색 컨테이너 스타일 */
@@ -33,14 +33,26 @@
 
 /* 검색 결과 컨테이너 스타일 */
 .results-container {
-    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; /* 결과 항목 간격 조절 */
+    justify-content: space-between;
+    /* background-color: #fff;
     padding: 24px;
     border-radius: 4px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
 }
 
 /* 검색 결과 제목 스타일 */
 .results-title {
     font-size: 20px;
     margin-bottom: 16px;
+}
+
+.result-card {
+    flex-basis: calc(25% - 16px); /* 4열로 배치하므로 25% 너비를 갖도록 설정 */
+    padding: 16px;
+    background-color: #f0f0f0; /* 배경색 설정 */
+    border: 1px solid #ddd; /* 테두리 설정 */
+    border-radius: 4px; /* 둥근 모서리 설정 */
 }

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Layout, Typography, Form, Radio, Button, message } from 'antd';
 import { SmileOutlined } from '@ant-design/icons';
 import './PPT.css';
+import { Tile } from './Tile';
 
 const { Header, Content } = Layout;
 const { Title, Paragraph } = Typography;
@@ -34,12 +35,10 @@ export const ProfessionalPsychologicalTest = () => {
 
   return (
     <>
-      <h2>
-        전문 심리 검사
-      </h2>
       <div className="form-container">
         <Form form={form} onFinish={onFinish}>
-          <Title level={3}>심리 검사 주제 선택</Title>
+          <h2>AI 재무심리유형 검사</h2>
+          <h3>심리 검사 주제 선택</h3>
           <Form.Item
             name="psychologicalTest"
             rules={[
@@ -62,16 +61,17 @@ export const ProfessionalPsychologicalTest = () => {
               icon={<SmileOutlined />}
               className="submit-button"
             >
-              결과 보기
+              검사 시작 (구현 예정)
             </Button>
           </Form.Item>
         </Form>
         {result && (
           <div className="result">
-            <Title level={3} className="result-title">
-              검사 결과
-            </Title>
-            <Paragraph className="result-text">{result}</Paragraph>
+            <h3 level={3} className="result-title">
+            지난 검사 결과 보기
+            </h3>
+            <Tile />
+            {/* <Paragraph className="result-text">{result}</Paragraph> */}
           </div>
         )}
       </div>

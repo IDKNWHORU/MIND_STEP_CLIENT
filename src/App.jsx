@@ -46,9 +46,6 @@ function App() {
             <Menu.Item key="/in-mind-search" icon={<CheckCircleOutlined />}>
               <Link to="/in-mind-search">인마인드 분석</Link>
             </Menu.Item>
-            <Menu.Item key="/analysis" icon={<MailOutlined />}>
-              <Link to="/analysis">채팅 분석</Link>
-            </Menu.Item>
           </Menu>
         </Header>
         <Content style={{ padding: '0 50px' }}>
